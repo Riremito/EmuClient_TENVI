@@ -11,6 +11,8 @@ bool Tenvi_2ch() {
 	r.Patch(0x005D4D27, L"31 C0 C3");
 	// HS Init? メイプルと戻り値違う
 	r.Patch(0x005749CE, L"B8 01 00 00 00 C3");
+	// ウィンドウモード, 一応レジストリ設定で可能らしい
+	r.Patch(0x005915D6, L"31 C0 40");
 
 	MessageBoxW(NULL, L"OK = Start", L"Tenvi_2ch.dll", MB_OK);
 	return true;
